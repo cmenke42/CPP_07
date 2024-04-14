@@ -3,18 +3,29 @@
 
 #include <iostream>
 
-template <typename T, size_t length>
-void printArray(T (&array)[length]) {
-    for (size_t i = 0; i < length; ++i) {
+#include "colors.h"
+
+template <typename T>
+void printArray(T* array, size_t length)
+{
+    std::cout << RED "Array: " << GREEN;
+    for (size_t i = 0; i < length; ++i)
+    {
         std::cout << array[i] << ' ';
     }
-    std::cout << std::endl;
+    std::cout << RESET << std::endl;
 }
 
 template <typename T>
-void function(T& value)
+void increment(T& value)
 {
 	value++;
+}
+
+template <typename T>
+void print(T& value)
+{
+    std::cout << value << std::endl;
 }
 
 #endif /* UTILS_HPP_INCLUDED */
