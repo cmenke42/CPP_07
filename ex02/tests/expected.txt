@@ -1,0 +1,86 @@
+[1;33m------ Testing emptyArray ------[0m
+emptyArray.size() = 0
+emptyArray[0] = [1;31mstd::exception[0m
+
+[1;33m------ Testing parmetric constructor ------[0m
+[1;34mArray<int> arrayInt(5)[0m
+arrayInt[0] = 0
+arrayInt[1] = 0
+arrayInt[2] = 0
+arrayInt[3] = 0
+arrayInt[4] = 0
+
+[1;34mComparison with: new int()[0m
+*a = new int()
+*a = 0
+
+[1;34mArray<CustomClass> arrayCustom(5)[0m
+arrayCustom[0].data = 42
+arrayCustom[1].data = 42
+arrayCustom[2].data = 42
+arrayCustom[3].data = 42
+arrayCustom[4].data = 42
+
+[1;33m------ Testing copy constructor ------[0m
+[1;34mArray<int> arrayIntCopy(arrayInt)[0m
+arrayIntCopy[0] = 0
+arrayIntCopy[1] = 0
+arrayIntCopy[2] = 0
+arrayIntCopy[3] = 0
+arrayIntCopy[4] = 0
+[1;34mIncrementing arrayIntCopy values by 1[0m
+[1;34marrayIntCopy values after incrementing by 1[0m
+arrayIntCopy[0] = 1
+arrayIntCopy[1] = 1
+arrayIntCopy[2] = 1
+arrayIntCopy[3] = 1
+arrayIntCopy[4] = 1
+[1;34marrayInt values after incrementing arrayIntCopy[0m
+arrayInt[0] = 0
+arrayInt[1] = 0
+arrayInt[2] = 0
+arrayInt[3] = 0
+arrayInt[4] = 0
+
+[1;33m------ Testing assignment operator ------[0m
+[1;34mSetting arrayInt values to 9[0m
+arrayInt[0] = 9
+arrayInt[1] = 9
+arrayInt[2] = 9
+arrayInt[3] = 9
+arrayInt[4] = 9
+[1;34mArray<int> arrayIntAssign = arrayInt[0m
+arrayIntAssign[0] = 9
+arrayIntAssign[1] = 9
+arrayIntAssign[2] = 9
+arrayIntAssign[3] = 9
+arrayIntAssign[4] = 9
+[1;34mDecrementing arrayInt values by 1[0m
+[1;34marrayInt values after decrementing by 1[0m
+arrayInt[0] = 8
+arrayInt[1] = 8
+arrayInt[2] = 8
+arrayInt[3] = 8
+arrayInt[4] = 8
+[1;34marrayIntAssign values after decrementing arrayInt[0m
+arrayIntAssign[0] = 9
+arrayIntAssign[1] = 9
+arrayIntAssign[2] = 9
+arrayIntAssign[3] = 9
+arrayIntAssign[4] = 9
+
+[1;33m------ Testing out of bounds ------[0m
+Size of arrayInt: 5
+arrayInt[-1] = [1;31mstd::exception[0m
+arrayInt[5] = [1;31mstd::exception[0m
+
+[1;33m------ Testing constness for size() and operator[] ------[0m
+[1;34mArray<int> constArrayInt(5)[0m
+constArrayInt.size() = 5
+
+constArrayInt[0] = 0
+constArrayInt[1] = 0
+constArrayInt[2] = 0
+constArrayInt[3] = 0
+constArrayInt[4] = 0
+
