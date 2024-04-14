@@ -26,9 +26,11 @@ void swap(T& left, T& right)
  * @param[in] left First argument.
  * @param[in] right Second argument.
  * @return The smallest of the two arguments. Else the right one.
+ * 
+ * @note when a temporary object is bound to a const reference, its lifetime is extended to the lifetime of the reference
  */
 template <typename T>
-T& min(T& left, T& right)
+const T& min(const T& left, const T& right)
 {
 	if (left < right)
 		return (left);
@@ -42,9 +44,11 @@ T& min(T& left, T& right)
  * @param[in] left First argument.
  * @param[in] right Second argument.
  * @return The greatest of the two arguments. Else the right one.
+ * 
+ * @note when a temporary object is bound to a const reference, its lifetime is extended to the lifetime of the reference
  */
 template <typename T>
-T& max(T& left, T& right)
+const T& max(const T& left, const T& right)
 {
 	if (left > right)
 		return (left);
