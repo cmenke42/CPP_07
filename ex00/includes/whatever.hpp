@@ -11,12 +11,9 @@
 template <typename T>
 void swap(T& left, T& right)
 {
-	T* pLeft = &left;
-	T* pRight = &right;
-
-	T temp = *pLeft;
-	*pLeft = *pRight;
-	*pRight = temp;
+	T temp = left;
+	left = right;
+	right = temp;
 }
 
 /**
