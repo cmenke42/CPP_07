@@ -1,5 +1,4 @@
 #include <stdexcept>
-#include <cstring>
 
 #include "Array.hpp"
 
@@ -9,10 +8,13 @@ Array<T>::Array() : _data(NULL), _size(0)
 }
 
 template <typename T>
-Array<T>::Array(unsigned int size) : _data(NULL), _size(size)
+Array<T>::Array(unsigned int n) : _data(NULL), _size(n)
 {
-	this->_data = new T[size];
-	std::memset(this->_data, 0, this->_size * sizeof(T));
+	this->_data = new T[this->_size];
+	for (unsigned int i = 0; i < this->_size; ++i)
+	{
+		this->_data[i] = T();
+	}
 }
 
 template <typename T>

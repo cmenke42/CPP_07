@@ -13,6 +13,7 @@ INCLUDES		:= -I ${INCLUDES_DIR} -I ${SRCDIR}
 # All source files
 SRCS := \
     main.cpp \
+		CustomClass.cpp \
 
 # Object files corresponding to each source file
 OBJS := $(patsubst %.cpp, ${OBJDIR}/%.o, ${SRCS})
@@ -25,8 +26,8 @@ CXXFLAGS += -std=c++98 -pedantic
 
 # Development flags
 CXXFLAGS += -g -O0
-# CXXFLAGS += -fsanitize=thread
-# CXXFLAGS += -fsanitize=address
+CXXFLAGS += -fsanitize=address
+CXXFLAGS += -fsanitize=undefined
 
 # Add includes
 CXXFLAGS += ${INCLUDES}
