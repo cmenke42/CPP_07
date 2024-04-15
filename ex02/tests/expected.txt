@@ -21,26 +21,13 @@ arrayCustom[2].data = 42
 arrayCustom[3].data = 42
 arrayCustom[4].data = 42
 
-[1;33m------ Testing copy constructor ------[0m
-[1;34mArray<int> arrayIntCopy(arrayInt)[0m
-arrayIntCopy[0] = 0
-arrayIntCopy[1] = 0
-arrayIntCopy[2] = 0
-arrayIntCopy[3] = 0
-arrayIntCopy[4] = 0
-[1;34mIncrementing arrayIntCopy values by 1[0m
-[1;34marrayIntCopy values after incrementing by 1[0m
-arrayIntCopy[0] = 1
-arrayIntCopy[1] = 1
-arrayIntCopy[2] = 1
-arrayIntCopy[3] = 1
-arrayIntCopy[4] = 1
-[1;34marrayInt values after incrementing arrayIntCopy[0m
-arrayInt[0] = 0
-arrayInt[1] = 0
-arrayInt[2] = 0
-arrayInt[3] = 0
-arrayInt[4] = 0
+[1;33m------ Starting deep copy test... ------[0m
+[1;34mFilling arrays with random values...[0m
+[1;34mTesting deep copy: [0m
+Array<int> tmp = numbers
+Array<int> test(tmp)
+[1;34mVerifying deep copy: mirror == numbers[0m
+[1;32mDeep copy test passed![0m
 
 [1;33m------ Testing assignment operator ------[0m
 [1;34mSetting arrayInt values to 9[0m
@@ -68,11 +55,23 @@ arrayIntAssign[1] = 9
 arrayIntAssign[2] = 9
 arrayIntAssign[3] = 9
 arrayIntAssign[4] = 9
+[1;34mSelf assignment: arrayInt = arrayInt[0m
+arrayInt[0] = 8
+arrayInt[1] = 8
+arrayInt[2] = 8
+arrayInt[3] = 8
+arrayInt[4] = 8
 
 [1;33m------ Testing out of bounds ------[0m
 Size of arrayInt: 5
 arrayInt[-1] = [1;31mstd::exception[0m
 arrayInt[5] = [1;31mstd::exception[0m
+[1;34mSetting arrayInt[0] = 42[0m
+arrayInt[0] = 42
+arrayInt[1] = 0
+arrayInt[2] = 0
+arrayInt[3] = 0
+arrayInt[4] = 0
 
 [1;33m------ Testing constness for size() and operator[] ------[0m
 [1;34mArray<int> constArrayInt(5)[0m
