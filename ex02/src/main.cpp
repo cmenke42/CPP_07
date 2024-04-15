@@ -75,7 +75,7 @@ void testDeepCopy()
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
 
-    std::cout << BLUE << "Filling array with random values..." << RESET << std::endl;
+    std::cout << BLUE << "Filling arrays with random values..." << RESET << std::endl;
     std::srand(std::time(NULL));
     for (int i = 0; i < MAX_VAL; ++i)
     {
@@ -103,10 +103,10 @@ void testDeepCopy()
     std::cout << BLUE << "Verifying deep copy: mirror == numbers" << RESET << std::endl;
     for (int i = 0; i < MAX_VAL; ++i)
     {
-        if (i < 10)
-            std::cout << "numbers[" << i << "] = " << numbers[i] << "\t| mirror[" << i << "] = " << mirror[i] << std::endl;
-        else if (i == 10)
-            std::cout << "..." << std::endl;
+        // if (i < 10)
+        //     std::cout << "numbers[" << i << "] = " << numbers[i] << "\t| mirror[" << i << "] = " << mirror[i] << std::endl;
+        // else if (i == 10)
+        //     std::cout << "..." << std::endl;
         if (mirror[i] != numbers[i])
         {
             std::cout << RED << "Deep copy verification failed at index: " << i << RESET << std::endl;
@@ -142,6 +142,10 @@ void testAssignmentOperator()
     arrayInt.print("arrayInt");
     std::cout << BLUE << "arrayIntAssign values after decrementing arrayInt" << RESET << std::endl;
     arrayIntAssign.print("arrayIntAssign");
+
+    std::cout << BLUE << "Self assignment: arrayInt = arrayInt" << RESET << std::endl;
+    arrayInt = arrayInt;
+    arrayInt.print("arrayInt");
     std::cout << std::endl;
 }
 
