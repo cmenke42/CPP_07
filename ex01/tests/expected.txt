@@ -1,0 +1,49 @@
+[1;33m------- Testing with arrayInt -------[0m
+[1;33mPrinting arrayInt: [1;34minstantiating template print<const int>[0m
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+[1;33mIncrementing arrayInt: [1;34minstantiating template increment<int>[0m
+[1;33mPrinting arrayInt: [1;34minstantiating template print<const int>[0m
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+[1;33mDecrementing arrayInt: [1;34mnormal function[0m
+[1;33mPrinting arrayInt: [1;34minstantiating template print<const int>[0m
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+[1;33m------- Testing with arrayCustomClass -------[0m
+[1;33mPrinting arrayCustomClass: [1;34minstantiating template print<CustomClassIter>[0m
+42
+42
+42
+42
+42
+42
+42
+42
+42
+42

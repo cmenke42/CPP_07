@@ -2,6 +2,7 @@
 
 #include "iter.hpp"
 #include "utils.hpp"
+#include "CustomClassIter.hpp"
 #include "colors.h"
 
 
@@ -12,39 +13,39 @@ int main(void)
 	std::cout << YELLOW << "------- Testing with arrayInt -------" << RESET << std::endl;
 	int arrayInt[10] = {0,1,2,3,4,5,6,7,8,9};
 
-	printArray(arrayInt, 10);
+	std::cout << YELLOW << "Printing arrayInt: " 
+						<< BLUE << "instantiating template print<const int>"
+						<< RESET << std::endl;
+	iter(arrayInt, 10, print<const int>);
+
 	std::cout << YELLOW << "Incrementing arrayInt: " 
 						<< BLUE << "instantiating template increment<int>"
 	<< RESET << std::endl;
-	iter(arrayInt, 10, increment<int>);
-	printArray(arrayInt, 10);
+	iter(arrayInt, 10, ::increment<int>);
+
+	std::cout << YELLOW << "Printing arrayInt: " 
+						<< BLUE << "instantiating template print<const int>"
+						<< RESET << std::endl;
+	iter(arrayInt, 10, print<const int>);
 
 	std::cout << YELLOW << "Decrementing arrayInt: "
 						<< BLUE << "normal function"
 						<< RESET << std::endl;
 	iter(arrayInt, 10, decrement);
-	printArray(arrayInt, 10);
+
+	std::cout << YELLOW << "Printing arrayInt: " 
+						<< BLUE << "instantiating template print<const int>"
+						<< RESET << std::endl;
+	iter(arrayInt, 10, print<const int>);
 	std::cout << std::endl;
 
 
-	std::cout << YELLOW << "------- Testing with arrayChar -------" << RESET << std::endl;
-	char arrayChar[] = "abcdefghij";
-
-	std::cout << YELLOW << "Printing arrayChar: " 
-						<< BLUE << "instantiating template print"
+	std::cout << YELLOW << "------- Testing with arrayCustomClass -------" << RESET << std::endl;
+	CustomClassIter arrayCustomClass[10];
+	std::cout << YELLOW << "Printing arrayCustomClass: " 
+						<< BLUE << "instantiating template print<CustomClassIter>"
 						<< RESET << std::endl;
-	iter(arrayChar, 10, print);
-
-	std::cout << YELLOW << "Incrementing arrayChar: "
-						<< BLUE << "instantiating template increment<char>"
-						<< RESET << std::endl;
-	iter(arrayChar, 10, increment<char>);
-
-	std::cout << YELLOW << "Printing arrayChar: " 
-						<< BLUE << "instantiating template print"
-						<< RESET << std::endl;
-	iter(arrayChar, 10, print);
-
+	iter(arrayCustomClass, 10, print<CustomClassIter>);
 	return 0;
 }
 

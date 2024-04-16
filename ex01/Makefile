@@ -13,6 +13,7 @@ INCLUDES		:= -I ${INCLUDES_DIR}
 # All source files
 SRCS := \
     main.cpp \
+		CustomClassIter.cpp \
 
 # Object files corresponding to each source file
 OBJS := $(patsubst %.cpp, ${OBJDIR}/%.o, ${SRCS})
